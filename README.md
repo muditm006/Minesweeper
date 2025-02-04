@@ -16,6 +16,15 @@ A custom implementation of the classic Minesweeper game, built using Java with t
 - **Optimized Flood-Fill Algorithm**  
   A refined `revealTiles` method ensures adjacent tiles are properly uncovered when an empty tile is clicked, avoiding infinite recursion.
 
+- **Save and Load Game State**  
+  Utilizes Java's File I/O library to save the current state of the game board to a file and load it back later. This allows players to pause and resume their games seamlessly.
+
+## Technical Challenges
+
+One of the largest challenges was designing the flood-fill algorithm for revealing adjacent squares. Initially, the `revealTiles` method caused every safe space on the board to be uncovered due to a missing base case in the recursion logic. After debugging and adding a condition to terminate recursion for already revealed tiles, the function worked as expected.
+
+Additionally, implementing file I/O required careful serialization of the game board state to ensure all relevant data (e.g., mine locations, revealed tiles, flags) could be accurately saved and restored.
+
 ## File Descriptions
 
 - **Game.java**  
